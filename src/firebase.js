@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import "firebase/auth";
 import { getAuth } from "firebase/auth";
 dotenv.config();
-console.log(process.env);
+
 const app = firebase.initializeApp({
   // apiKey: "AIzaSyDoeeiQyUbfyzXfG43arJNIY7uJwtxvXjY",
   // authDomain: "spl-2-4789a.firebaseapp.com",

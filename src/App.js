@@ -1,26 +1,12 @@
 import React from "react";
+import AppRouter from "./components/AppRouter";
 import { Container } from "react-bootstrap";
-import Signup from "./Components/SighnUp/Signup";
-import { AuthProvider } from "./Contexts/AuthContext";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LogIn from "./pages/Loginpage";
 
 function App() {
-  return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Router>
-          <AuthProvider>
-            <Routes>
-              <Route path="/signup" component={Signup} />
-            </Routes>
-          </AuthProvider>
-        </Router>
-      </div>
-    </Container>
-  );
+  return <AppRouter />;
 }
 
 export default App;
