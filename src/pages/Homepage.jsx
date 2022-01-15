@@ -12,11 +12,13 @@ import {
 import React from 'react'
 import { Layout } from '../components/Layout'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../Contexts/AuthContexts'
 
 export default function Homepage() {
+  const {currentUSer} = useAuth()
   return (
     <Layout>
-      <Heading>Home page</Heading>
+      <Heading>Home page </Heading>
       <Text my={6}></Text>
 
       
