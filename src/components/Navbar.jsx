@@ -8,11 +8,12 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
+import { useAuth } from '../Contexts/AuthContexts'
 import Navlink from './Navlink'
 
 export function Navbar() {
   const { toggleColorMode } = useColorMode()
-
+  const{logout} =useAuth()
   return (
     <Box
       borderBottom='2px'
@@ -20,7 +21,7 @@ export function Navbar() {
       mb={4}
     >
       <HStack py={4} justifyContent='flex-end' maxW='container.lg' mx='auto'>
-        <Navlink to='/' name='Firbase Authentication' size='lg' />
+        <Navlink to='/' name='Teach Me 2.0' size='lg' />
         <Spacer />
         <Navlink to='/login' name='Login' />
         <Navlink to='/register' name='Register' />
@@ -32,7 +33,7 @@ export function Navbar() {
           onClick={async e => {
             e.preventDefault()
             // handle logout
-            alert('logout user')
+            logout()
           }}
         />
         <IconButton
