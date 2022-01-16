@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Redirect, useLocation } from 'react-router-dom/cjs/react-router-dom.min'
+import { useAuth } from '../Contexts/AuthContexts'
 import ForgotPasswordPage from '../pages/ForgotPasswordPage'
 import Homepage from '../pages/Homepage'
 import Loginpage from '../pages/Loginpage'
@@ -15,15 +17,47 @@ export default function AppRouter(props) {
       <Router>
         <Switch>
           <Route exact path='/' component={Homepage} />
-          <Route exact path='/login' component={Loginpage} />
-          <Route exact path='/register' component={Registerpage} />
-          <Route exact path='/profile' component={Profilepage} />
-          <Route exact path='/protected-page' component={ProtectedPage} />
-          <Route exact path='/forgot-password' component={ForgotPasswordPage} />
-          <Route exact path='/reset-password' component={ResetPasswordPage} />
+          <ProtectedRoute exact path='/login' component={Loginpage} />
+          <ProtectedRoute exact path='/register' component={Registerpage} />
+          <ProtectedRoute exact path='/profile' component={Profilepage} />
+          <ProtectedRoute exact path='/protected-page' component={ProtectedPage} />
+          <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
+          <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
           <Route exact path='*' component={NotfoundPage} />
         </Switch>
       </Router>
     </>
   )
 }
+
+
+function ProtectedRoute(props) {
+  const { currentUSer } = useAuth()
+  const { path } = props
+  console.log('path', path)
+  const location = useLocation()
+  console.log('location state', location.state)
+
+  if (
+    path === '/login' ||
+    path === '/register' ||
+    path === '/forgot-password' ||
+    path === '/reset-password'
+  ) {
+    return currentUSer ? (
+      <Redirect to={location.state?.from ?? '/profile'} />
+    ) : (
+      <Route {...props} />
+    )
+  }
+  return currentUSer ? (
+    <Route {...props} />
+  ) : (
+    <Redirect
+      to={{
+        pathname: '/login',
+        state: { from: path },
+      }}
+    />
+  )
+    }

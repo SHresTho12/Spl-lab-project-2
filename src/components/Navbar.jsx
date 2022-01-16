@@ -13,7 +13,7 @@ import Navlink from './Navlink'
 
 export function Navbar() {
   const { toggleColorMode } = useColorMode()
-  const{logout} =useAuth()
+  const{currentUSer ,logout} =useAuth()
   return (
     <Box
       borderBottom='2px'
@@ -23,11 +23,11 @@ export function Navbar() {
       <HStack py={4} justifyContent='flex-end' maxW='container.lg' mx='auto'>
         <Navlink to='/' name='Teach Me 2.0' size='lg' />
         <Spacer />
-        <Navlink to='/login' name='Login' />
-        <Navlink to='/register' name='Register' />
-        <Navlink to='/profile' name='Profile' />
-        <Navlink to='/protected-page' name='Protected' />
-        <Navlink
+        {!currentUSer && <Navlink to='/login' name='Login' />}
+        {!currentUSer && <Navlink to='/register' name='Register' />}
+        {currentUSer  && <Navlink to='/profile' name='Profile' />}
+        {currentUSer  && <Navlink to='/protected-page' name='Protected' />}
+        {currentUSer  && <Navlink
           to='/logout'
           name='Logout'
           onClick={async e => {
@@ -35,7 +35,7 @@ export function Navbar() {
             // handle logout
             logout()
           }}
-        />
+        />}
         <IconButton
           variant='outline'
           icon={useColorModeValue(<FaSun />, <FaMoon />)}

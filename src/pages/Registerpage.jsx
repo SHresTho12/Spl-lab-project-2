@@ -16,6 +16,7 @@ import { Card } from '../components/Card'
 import DividerWithText from '../components/DividerWithText'
 import { Layout } from '../components/Layout'
 import { useAuth } from '../Contexts/AuthContexts'
+import useMounted from '../hooks/useMounted'
 
 export default function Registerpage() {
   const history = useHistory()
@@ -23,8 +24,8 @@ export default function Registerpage() {
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toast =  useToast()
-
-  const {register} = useAuth()
+  const mounted = useMounted()
+  const {register,signInWithGoogle} = useAuth()
   return (
     <Layout>
       <Heading textAlign='center' my={12}>
@@ -57,7 +58,7 @@ export default function Registerpage() {
                isClosable: true
              })}
           
-             ).finally(() => setIsSubmitting(false))
+             ).finally(() => mounted.current &&setIsSubmitting(false))
            
 
           }}
@@ -94,7 +95,7 @@ export default function Registerpage() {
           isFullWidth
           colorScheme='red'
           leftIcon={<FaGoogle />}
-          onClick={() => alert('sign in with google')}
+          onClick={() => signInWithGoogle().then(user => console.log(user)).catch(error => console.log(error))}
         >
           Sign in with Google
         </Button>

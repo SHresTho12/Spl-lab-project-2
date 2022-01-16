@@ -15,20 +15,23 @@ import {
 import React, { useEffect, useRef, useState } from 'react'
 import { FaGoogle } from 'react-icons/fa'
 import { Link, useHistory } from 'react-router-dom'
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
 import { Card } from '../components/Card'
 import DividerWithText from '../components/DividerWithText'
 import { Layout } from '../components/Layout'
 import { useAuth } from '../Contexts/AuthContexts'
+import useMounted from '../hooks/useMounted'
 
 export default function Loginpage() {
   const history = useHistory()
+  const location = useLocation()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toast =  useToast()
-
-  const {login} = useAuth()
-
+  const mounted = useMounted()
+  const {login , signInWithGoogle} = useAuth()
+  
   return (
     <Layout>
       <Heading textAlign='center' my={12}>
@@ -52,7 +55,7 @@ export default function Loginpage() {
            login(email , password)
            .then((response) => {
              console.log(response)
-             history.push('/profile')
+             history.push(location.state?.from ?? '/profile')
           
           })
            .catch((error) => {
@@ -64,7 +67,7 @@ export default function Loginpage() {
                isClosable: true
              })}
           
-             ).finally(() => setIsSubmitting(false))
+             ).finally(() => mounted.current && setIsSubmitting(false))
           }}
         >
           <Stack spacing='6'>
@@ -103,7 +106,7 @@ export default function Loginpage() {
           isFullWidth
           colorScheme='red'
           leftIcon={<FaGoogle />}
-          onClick={() => alert('sign in with google')}
+          onClick={() =>signInWithGoogle().then(user => console.log(user)).catch(error => console.log(error))}
         >
           Sign in with Google
         </Button>
