@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   sendPasswordResetEmail,
+  confirmPasswordReset,
 } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
@@ -17,6 +18,7 @@ const AuthContext = createContext({
   logout: () => Promise,
   signInWithGoogle: () => Promise,
   forgotPassword: () => Promise,
+  resetPassword: () => Promise,
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -48,6 +50,9 @@ export default function AuthContextProvider({ children }) {
       url: "http://localhost:3000/login",
     });
   }
+  function resetPassword(oobCode, newPassword) {
+    return confirmPasswordReset(auth, oobCode, newPassword);
+  }
   function logout() {
     return signOut(auth);
   }
@@ -59,6 +64,7 @@ export default function AuthContextProvider({ children }) {
     logout,
     signInWithGoogle,
     forgotPassword,
+    resetPassword,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
