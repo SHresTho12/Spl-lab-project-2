@@ -17,12 +17,18 @@ import Banner from '../components/Banner'
 import { Navbar } from '../components/Navbar'
 import { Card } from '../components/Card'
 import GameCard from '../components/GameCard'
-
+import Description from '../components/Description'
+import GameCards from '../components/GameCards'
+import Footer from '../components/Footer'
 
 export default function Homepage() {
   const {currentUSer} = useAuth()
   return (
- <Layout> <Banner/>
+ <Layout>
+    <Banner/>
+    <Description/>
+    <GameCards/>
+    <Footer/>
  </Layout>
   
   
