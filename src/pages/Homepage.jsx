@@ -13,25 +13,18 @@ import React from 'react'
 import { Layout } from '../components/Layout'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../Contexts/AuthContexts'
+import Banner from '../components/Banner'
+import { Navbar } from '../components/Navbar'
+import { Card } from '../components/Card'
+import GameCard from '../components/GameCard'
+
 
 export default function Homepage() {
   const {currentUSer} = useAuth()
   return (
-    <Layout>
-      <Heading>Home page </Heading>
-      <Text my={6}></Text>
-
-      
-     
-      
-      <List>
-        <ListItem>
-          <Link to='/reset-password'>reset page</Link>
-        </ListItem>
-        <ListItem>
-          <Link to='/forgot-password'>forgot page</Link>
-        </ListItem>
-      </List>
-    </Layout>
+ <Layout> <Banner/>
+ </Layout>
+  
+  
   )
 }
