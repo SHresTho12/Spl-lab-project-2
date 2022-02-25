@@ -1,14 +1,12 @@
 import React from 'react'
 import { Layout } from '../components/Layout'
 
-function GamePage() {
+function TutorialsPage() {
   return (
-
-   <Layout>
-       
-   </Layout>
-
+    <Layout>
+        
+    </Layout>
   )
 }
 
-export default GamePage
+export default TutorialsPage

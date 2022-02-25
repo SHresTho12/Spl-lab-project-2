@@ -10,13 +10,16 @@ import Profilepage from '../pages/Profilepage'
 import ProtectedPage from '../pages/ProtectedPage'
 import Registerpage from '../pages/Registerpage'
 import ResetPasswordPage from '../pages/ResetPasswordPage'
-
+import GamePage from '../pages/GamePage'
+import TutorialsPage from '../pages/TutorialsPage'
 export default function AppRouter(props) {
   return (
     <>
       <Router>
         <Switch>
           <Route exact path='/' component={Homepage} />
+          <Route exact path='/games' component={GamePage} />
+          <Route exact path='/tutorials' component={TutorialsPage} />
           <ProtectedRoute exact path='/login' component={Loginpage} />
           <ProtectedRoute exact path='/register' component={Registerpage} />
           <ProtectedRoute exact path='/profile' component={Profilepage} />
