@@ -23,7 +23,8 @@ export function Navbar() {
       <HStack py={4} justifyContent='flex-end' maxW='100%' mx='auto'>
         <Navlink to='/' name='Teach Me 2.0' size='lg' />
         <Spacer />
-        {!currentUSer && <Navlink to='/login' name='Login' />}
+        <Navlink to='/games' name='Games' />
+        <Navlink to='/tutorials' name='Tutorials'/>
         {!currentUSer && <Navlink to='/login' name='Login' />}
         {!currentUSer && <Navlink to='/register' name='Register' />}
         {currentUSer  && <Navlink to='/profile' name='Profile' />}
