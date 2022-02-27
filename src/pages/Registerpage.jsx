@@ -17,6 +17,8 @@ import DividerWithText from '../components/DividerWithText'
 import { Layout } from '../components/Layout'
 import { useAuth } from '../Contexts/AuthContexts'
 import useMounted from '../hooks/useMounted'
+import Axios from 'axios'; 
+
 
 export default function Registerpage() {
   const history = useHistory()
@@ -26,6 +28,14 @@ export default function Registerpage() {
   const toast =  useToast()
   const mounted = useMounted()
   const {register,signInWithGoogle} = useAuth()
+  const signUp = () => {
+    Axios.post("http://localhost:3001/api/signup", {
+      email : email,
+      password : password
+    }).then(() => {
+      alert("one row inserted");
+    })
+  }
   return (
     <Layout>
       <Heading textAlign='center' my={12}>
@@ -66,7 +76,12 @@ export default function Registerpage() {
           <Stack spacing='6'>
             <FormControl id='email'>
               <FormLabel>Email address</FormLabel>
-              <Input value={email} onChange={(e) => setEmail(e.target.value)} name='email' type='email' autoComplete='email' required />
+              <Input 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                name='email' 
+                type='email' 
+                autoComplete='email' required />
             </FormControl>
             <FormControl id='password'>
               <FormLabel>Password</FormLabel>
@@ -79,7 +94,7 @@ export default function Registerpage() {
                 required
               />
             </FormControl>
-            <Button isLoading={isSubmitting} type='submit' colorScheme='primary' size='lg' fontSize='md'>
+            <Button onClick={signUp} isLoading={isSubmitting} type='submit' colorScheme='primary' size='lg' fontSize='md'>
               Sign up
             </Button>
           </Stack>
