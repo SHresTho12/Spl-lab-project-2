@@ -25,6 +25,7 @@ export function Navbar() {
         <Spacer />
         <Navlink to='/games' name='Games' />
         <Navlink to='/tutorials' name='Tutorials'/>
+        <Navlink to='/quizzes' name='Quizzes'/>
         {!currentUSer && <Navlink to='/login' name='Login' />}
         {!currentUSer && <Navlink to='/register' name='Register' />}
         {currentUSer  && <Navlink to='/profile' name='Profile' />}

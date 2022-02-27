@@ -1,16 +1,18 @@
 import React from 'react'
 import { Layout } from '../components/Layout'
+import Navlink from '../components/Navlink'
 import '../Css/style.css'
+
 function GamePage() {
   return (
 
-   <Layout>
+  <Layout>
        <body class="gaming-page-body">
     <div class="navigation">
         <input type="checkbox" class="navigation__checkbox" id="navi-toggle"/>
     
         <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp</span>
+            <span class="navigation__icon">&nbsp;</span>
         </label>
         <div class="navigation__background">&nbsp;</div>
     
@@ -89,7 +91,7 @@ function GamePage() {
                                 </li>
                                 <li>
                                     
-                                        <a href="../../pages/Games/MemoryGame/memoryGame.html" class="game-btn game-btn-cta">Play Now</a>
+                                        <Navlink to='/memoryGameMixOrMatch' name="MixOrMatch" />
                                        
                                 </li>
                             </ul>
