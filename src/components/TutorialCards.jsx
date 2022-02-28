@@ -13,11 +13,12 @@ import {
   useColorMode,
  
 } from "@chakra-ui/react";
+import Navlink from "./Navlink";
 
 function TutorialCards(props) {
-  const { product, summary, longLine, image } = props;
+  const { product, summary, longLine, image ,link} = props;
    const { colorMode, toggleColorMode} = useColorMode();
-
+  console.log(link);
   return ( 
      <Box rounded="20px"  margin="5" maxW="32rem" overflow="hidden" bg={ colorMode === "dark" ? "gray.700": "gray.200"} mt={10} border='1px' borderColor='green.200' boxShadow='2xl '  >
         <Image src=
@@ -41,11 +42,11 @@ function TutorialCards(props) {
           </Stack>
           <Flex>  
             <Spacer />
-           
-            <Button variant="solid" 
+            <Navlink to={link} name={product}/>
+            {/* <Button variant="solid" 
               colorScheme="green" size="lg">
-                Learn More
-            </Button>
+               
+            </Button> */}
           </Flex>
         </Box>
       </Box>

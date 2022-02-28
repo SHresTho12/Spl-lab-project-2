@@ -14,6 +14,8 @@ import GamePage from '../pages/GamePage'
 import TutorialsPage from '../pages/TutorialPage/Tutorial'
 import MixOrMatch from '../pages/Games/MemoryGame/MixOrMatch'
 import Quizzes from '../pages/Quiz/QuizPage'
+import numberQuiz from '../pages/Quiz/NumberQuiz'
+
 export default function AppRouter(props) {
   return (
     <>
@@ -31,6 +33,10 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
           <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
           <Route exact path='*' component={NotfoundPage} />
+
+
+          <Route exact path='/numberQuiz' component={numberQuiz} />
+          
         </Switch>
       </Router>
     </>

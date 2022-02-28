@@ -10,6 +10,8 @@ import colorsImage from "../../images/Videos/colors.jpg"
 import numbersImage from "../../images/Videos/numbers.jpg"
 import pattersImage from "../../images/Videos/shapes.jpg"
 import shapesImage from "../../images/Videos/shapes.jpg"
+import NumberQuiz from "./NumberQuiz";
+
 function Tutorial() {
     const dataList = [
     {
@@ -17,7 +19,8 @@ function Tutorial() {
       product: "Alphabets Quiz",
       summary: "Learn Alphabets with animation and interactive videos",
       longLine: "There are lots of animations and videos about the alphabets",
-      image:alphabetImage
+      image:alphabetImage,
+      link:"/alphabetQuiz"
     },
     {
       id: "2",
@@ -25,14 +28,16 @@ function Tutorial() {
       summary:
         "Teach your child animal names easily with simple cartoons",
       longLine: "There are lots of animations and videos about the animals",
-      image:animalImage
+      image:animalImage,
+      link:"/animalQuiz"
     },
     {
       id: "3",
       product: "Colors Quiz",
       summary: "Colors are fun",
       longLine: "Try our fun videos about colors and have fun with colors",
-      image:colorsImage
+      image:colorsImage,
+      link:"/colorQuiz"
     },
     {
       id: "4",
@@ -40,7 +45,8 @@ function Tutorial() {
       summary:
         "Numbers are fun",
       longLine: "Learning numbers can be fun with all fun activities",
-      image:numbersImage
+      image:numbersImage,
+      link:'/numberQuiz'
     },
     {
       id: "5",
@@ -48,15 +54,17 @@ function Tutorial() {
       summary:
         "LEarn all kinds of shapes",
       longLine: "Circle to square all can be fun with animations and fun videos",
-      image:shapesImage
+      image:shapesImage,
+      link:"/shapesQuiz"
     },
     {
       id: "6",
-      product: "Patters",
+      product: "Patterns",
       summary:
         "Help your child to learn patterns ",
       longLine: "All the patterns simplified",
-      image:pattersImage
+      image:pattersImage,
+      link:"/patternQuiz"
     }
   ];
   return (
@@ -64,7 +72,7 @@ function Tutorial() {
     <Container maxW="100rem" centerContent>
         <SimpleGrid columns={[1, 2, 3, 1, 2 , 3]}>
           {dataList.map(function (data) {
-            const { id, product, summary, longLine,image } = data;
+            const { id, product, summary, longLine,image,link } = data;
             return (
               <div className="tutorial-cards"><TutorialCards
                 key={id}
@@ -72,11 +80,13 @@ function Tutorial() {
                 summary={summary}
                 longLine={longLine}
                 image={image}
+                link={link}
               /></div>
             );
           })}
         </SimpleGrid>
-      </Container></Layout>
+      </Container>
+      </Layout>
   )
 }
 
