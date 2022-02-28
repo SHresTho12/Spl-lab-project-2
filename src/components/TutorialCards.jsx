@@ -24,7 +24,7 @@ function TutorialCards(props) {
 {image}
                alt="Card Image" boxSize="32rem">
         </Image>
-        <Box p={5} bg="green.50">
+        <Box p={5} bg={ colorMode === "dark" ? "gray.500": "green.50"}>
           <Stack align="center">
             <Badge variant="solid" colorScheme="green" 
               rounded="full" px={2}>
@@ -32,10 +32,10 @@ function TutorialCards(props) {
             </Badge>
           </Stack>
           <Stack align="center" marginBottom={4} >
-            <Text as="h2" fontWeight="normal" my={2} >
+            <Text as="h2" fontWeight="normal" my={2} color={colorMode === "dark"?"white":"black"}>
              {summary}
             </Text>
-            <Text fontWeight="light" >
+            <Text fontWeight="light"  color={colorMode === "dark"?"white":"black"}>
               {longLine}
             </Text>
           </Stack>
