@@ -17,7 +17,8 @@ function Tutorial() {
       product: "Alphabets",
       summary: "Learn Alphabets with animation and interactive videos",
       longLine: "There are lots of animations and videos about the alphabets",
-      image:alphabetImage
+      image:alphabetImage,
+      link:"/numberQuiz"
     },
     {
       id: "2",
@@ -25,14 +26,16 @@ function Tutorial() {
       summary:
         "Teach your child animal names easily with simple cartoons",
       longLine: "There are lots of animations and videos about the animals",
-      image:animalImage
+      image:animalImage,
+      link:"/alphabetQuiz"
     },
     {
       id: "3",
       product: "Colors",
       summary: "Colors are fun",
       longLine: "Try our fun videos about colors and have fun with colors",
-      image:colorsImage
+      image:colorsImage,
+      link:"/alphabetQuiz"
     },
     {
       id: "4",
@@ -40,7 +43,8 @@ function Tutorial() {
       summary:
         "Numbers are fun",
       longLine: "Learning numbers can be fun with all fun activities",
-      image:numbersImage
+      image:numbersImage,
+      link:"/alphabetQuiz"
     },
     {
       id: "5",
@@ -48,7 +52,8 @@ function Tutorial() {
       summary:
         "LEarn all kinds of shapes",
       longLine: "Circle to square all can be fun with animations and fun videos",
-      image:shapesImage
+      image:shapesImage,
+      link:"/alphabetQuiz"
     },
     {
       id: "6",
@@ -56,7 +61,8 @@ function Tutorial() {
       summary:
         "Help your child to learn patterns ",
       longLine: "All the patterns simplified",
-      image:pattersImage
+      image:pattersImage,
+      link:"/alphabetQuiz"
     }
   ];
   return (
@@ -64,7 +70,7 @@ function Tutorial() {
     <Container maxW="100rem" centerContent>
         <SimpleGrid columns={[1, 2, 3, 1, 2 , 3]}>
           {dataList.map(function (data) {
-            const { id, product, summary, longLine,image } = data;
+            const { id, product, summary, longLine,image,link } = data;
             return (
               <div className="tutorial-cards"><TutorialCards
                 key={id}
@@ -72,6 +78,7 @@ function Tutorial() {
                 summary={summary}
                 longLine={longLine}
                 image={image}
+                link={link}
               /></div>
             );
           })}

@@ -14,14 +14,20 @@ import GamePage from '../pages/GamePage'
 import TutorialsPage from '../pages/TutorialPage/Tutorial'
 import MixOrMatch from '../pages/Games/MemoryGame/MixOrMatch'
 import Quizzes from '../pages/Quiz/QuizPage'
-import numberQuiz from '../pages/Quiz/NumberQuiz'
 
+
+import Play from './NumberQuiz';
+import QuizSummary from './QuizSummary';
 export default function AppRouter(props) {
   return (
     <>
       <Router>
         <Switch>
           <Route exact path='/' component={Homepage} />
+        
+        
+      <Route path="/play/NumberQuiz" exact component={Play} />
+      <Route path="/play/quizSummary" exact component={QuizSummary} />
           <Route exact path='/memoryGameMixOrMatch' component={MixOrMatch}/>
           <Route exact path='/games' component={GamePage} />
           <Route exact path='/quizzes' component={Quizzes} />
@@ -35,7 +41,7 @@ export default function AppRouter(props) {
           <Route exact path='*' component={NotfoundPage} />
 
 
-          <Route exact path='/numberQuiz' component={numberQuiz} />
+          
           
         </Switch>
       </Router>

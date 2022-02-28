@@ -10,7 +10,7 @@ import colorsImage from "../../images/Videos/colors.jpg"
 import numbersImage from "../../images/Videos/numbers.jpg"
 import pattersImage from "../../images/Videos/shapes.jpg"
 import shapesImage from "../../images/Videos/shapes.jpg"
-import NumberQuiz from "./NumberQuiz";
+
 
 function Tutorial() {
     const dataList = [
@@ -46,7 +46,7 @@ function Tutorial() {
         "Numbers are fun",
       longLine: "Learning numbers can be fun with all fun activities",
       image:numbersImage,
-      link:'/numberQuiz'
+      link:'/play/NumberQuiz'
     },
     {
       id: "5",
