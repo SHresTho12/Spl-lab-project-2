@@ -1,0 +1,83 @@
+[
+    {
+        "question": "What number comes after 3?",
+        "optionA": "4",
+        "optionB": "5",
+        "optionC": "6",
+        "optionD": "7",
+        "answer": "4",
+	"image": "null"
+    },
+
+    {
+        "question": "What number comes before 12?",
+        "optionA": "10",
+        "optionB": "11",
+        "optionC": "12",
+        "optionD": "13",
+        "answer": "11",
+	"image": "null"
+    },
+
+    {
+        "question": "What is the given number?",
+        "optionA": "Fifteen",
+        "optionB": "Sixteen",
+        "optionC": "Seventeen",
+        "optionD": "Eighteen",
+        "answer": "Eighteen",
+	"image": "18.jpg"
+    },
+
+    {
+        "question": "What do you get when you add 2 apples with 2 more apples?",
+        "optionA": "5 apples",
+        "optionB": "4 apples",
+        "optionC": "3 apples",
+        "optionD": "2 apples",
+        "answer": "4 apples",
+	"image": "4apples.jpg"
+    },
+
+    {
+        "question": "You have 5 candies. Someone took 3 candies from you. How many candies do you have left?",
+        "optionA": "6 candies",
+        "optionB": "4 candies",
+        "optionC": "2 candies",
+        "optionD": "1 candy",
+        "answer": "2 candies",
+	"image": "2 candies.jpg"
+    },
+
+    {
+        "question": "How many dogs are there?",
+        "optionA": "3",
+        "optionB": "4",
+        "optionC": "5",
+        "optionD": "6",
+        "answer": "5",
+	"image": "5dogs.jpg"
+    },
+
+    {
+        "question": "How many rabbits are there?",
+        "optionA": "5",
+        "optionB": "7",
+        "optionC": "9",
+        "optionD": "10",
+        "answer": "7",
+	"image": "7rabbits.jpg"
+    },
+
+    {
+        "question": "How many birds are there?",
+        "optionA": "1",
+        "optionB": "2",
+        "optionC": "3",
+        "optionD": "4",
+        "answer": "4",
+	"image": "4birds.jpg"
+    }
+
+        
+]

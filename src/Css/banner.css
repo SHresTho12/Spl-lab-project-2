@@ -1,0 +1,137 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*This means all the borders and paddings will not be added to the main width of the element */ }
+
+
+body {
+  box-sizing: border-box; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    /*staring time the element should be invisible.*/
+    transform: translateX(-100%); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    /* 0 means what it exactly looks without animation*/ } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    /*staring time the element should be invisible.*/
+    transform: translateX(100%); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    /* 0 means what it exactly looks without animation*/ } }
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    /*staring time the element should be invisible.*/
+    transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    /* 0 means what it exactly looks without animation*/ } }
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0; }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 10em; } }
+
+@keyframes dance {
+  0%, 100% {
+    transform: rotate(0); }
+  25% {
+    transform: rotate(-30deg); }
+  75% {
+    transform: rotate(30deg); } }
+
+@-webkit-keyframes glowText {
+  from {
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f; }
+  to {
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 10px #efa032, 15px 15px 20px #46b59b, 20px 20px 30px #017e7f; } }
+
+
+
+
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px; }
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s; 
+        animation-iteration-count:1; --> how many times the animation will happen
+    
+    */ }
+  .heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    animation: moveInRight 1s ease-in; }
+
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  color: #28b485b6; }
+
+
+
+
+
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485b6), url(../images/homepageBackground.jpg);
+  background-size: cover;
+  background-position: top;
+  /* what of the size of the view page the image will always start from the top and stay there */
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px; }
+  .header__logo {
+    height: 35px; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*It moves the element 50% of its own width to the left . It is not relative or absolute to its parent rather it moves relative to its center */
+    /*as the btn element is a a element it is considered as a inline text element so you can center it with text decorations*/
+    text-align: center; }
+
+
+
+

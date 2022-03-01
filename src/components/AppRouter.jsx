@@ -10,13 +10,42 @@ import Profilepage from '../pages/Profilepage'
 import ProtectedPage from '../pages/ProtectedPage'
 import Registerpage from '../pages/Registerpage'
 import ResetPasswordPage from '../pages/ResetPasswordPage'
+import GamePage from '../pages/GamePage'
+import TutorialsPage from '../pages/TutorialPage/Tutorial'
+import MixOrMatch from '../pages/Games/MemoryGame/MixOrMatch'
+import Quizzes from '../pages/Quiz/QuizPage'
 
+
+import Play from './NumberQuiz';
+import QuizSummary from './QuizSummary';
+import NumberTutorialPage from '../pages/TutorialPage/NumberTutorialPage'
+import ColorsTutorials from '../pages/TutorialPage/ColorsTutorials'
+import AlphabetsTutorials from '../pages/TutorialPage/AlphabetsTutorials'
+import ShapesTutorial from '../pages/TutorialPage/ShapesTutorial'
+import AnimalTutorials from '../pages/TutorialPage/AnimalTutorials'
+import PatternsTutorials from '../pages/TutorialPage/PatternsTutorials'
 export default function AppRouter(props) {
   return (
     <>
       <Router>
         <Switch>
           <Route exact path='/' component={Homepage} />
+        
+        
+          <Route path="/play/NumberQuiz" exact component={Play} />
+          <Route path="/play/quizSummary" exact component={QuizSummary} />
+          <Route exact path='/memoryGameMixOrMatch' component={MixOrMatch}/>
+          <Route exact path='/games' component={GamePage} />
+          <Route exact path='/quizzes' component={Quizzes} />
+
+          <Route exact path='/NumberTutorial' component={NumberTutorialPage}/>
+          <Route exact path='/ColorsTutorials' component={ColorsTutorials}/>
+          <Route exact path='/AlphabetsTutorials' component={AlphabetsTutorials}/>
+          <Route exact path='/ShapesTutorials' component={ShapesTutorial}/>
+          <Route exact path='/AnimalsTutorials' component={AnimalTutorials}/>
+          <Route exact path='/PatternsTutorials' component={PatternsTutorials}/>
+          <Route exact path='/tutorials' component={TutorialsPage} />
+
           <ProtectedRoute exact path='/login' component={Loginpage} />
           <ProtectedRoute exact path='/register' component={Registerpage} />
           <ProtectedRoute exact path='/profile' component={Profilepage} />
@@ -24,6 +53,10 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
           <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
           <Route exact path='*' component={NotfoundPage} />
+
+
+          
+          
         </Switch>
       </Router>
     </>
