@@ -24,6 +24,7 @@ import AlphabetsTutorials from '../pages/TutorialPage/AlphabetsTutorials'
 import ShapesTutorial from '../pages/TutorialPage/ShapesTutorial'
 import AnimalTutorials from '../pages/TutorialPage/AnimalTutorials'
 import PatternsTutorials from '../pages/TutorialPage/PatternsTutorials'
+import Todo from '../pages/ToDo'
 export default function AppRouter(props) {
   return (
     <>
@@ -49,6 +50,7 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/login' component={Loginpage} />
           <ProtectedRoute exact path='/register' component={Registerpage} />
           <ProtectedRoute exact path='/profile' component={Profilepage} />
+          <ProtectedRoute exact path='/toDo' component={Todo} />
           <ProtectedRoute exact path='/protected-page' component={ProtectedPage} />
           <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
           <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
