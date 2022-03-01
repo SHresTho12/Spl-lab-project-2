@@ -1,0 +1,11 @@
+#canvas{
+    background-color: #134959;
+    /* width: 500px;
+    height: 400px; */
+  }
+  
+  .gameHeader{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, cursive;
+    color: white;
+    font-size: 40px;
+  }
