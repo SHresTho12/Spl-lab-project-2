@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from 'react'
 import { BallMovement } from './BallMovement';
 import data from '../../data';
-import WallCollision from './util/WallCollision';
+import WallCollision from '../../Utils/DXBallGame/WallCollision';
 import Paddle from './Paddle';
 import Brick from './Brick';
-import BrickCollision from './util/BrickCollision';
-import PaddleHit from './util/PaddleHit';
+import BrickCollision from '../../Utils/DXBallGame/BrickCollision';
+import PaddleHit from '../../Utils/DXBallGame/PaddleHit';
 import PlayerStats from './PlayerStats';
-import AllBroke from './util/AllBroke';
-import ResetBall from './util/ResetBall';
+import AllBroke from '../../Utils/DXBallGame/AllBroke';
+import ResetBall from '../../Utils/DXBallGame/ResetBall';
 
 let bricks = [];
 
