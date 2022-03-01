@@ -1,136 +1,83 @@
 [
     {
-        "question": "What temperature does water boil at?",
-        "optionA": "50 degrees Celcius",
-        "optionB": "25 degrees Celcius",
-        "optionC": "100 degrees Celcius",
-        "optionD": "150 degrees Celcius",
-        "answer": "100 degrees Celcius"
+        "question": "What number comes after 3?",
+        "optionA": "4",
+        "optionB": "5",
+        "optionC": "6",
+        "optionD": "7",
+        "answer": "4",
+	"image": "null"
     },
 
     {
-        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
-        "optionA": "Wole Soyinka",
-        "optionB": "William Shakespeare",
-        "optionC": "Ngozi Chimamanda Adichie",
-        "optionD": "Dan Brown",
-        "answer": "William Shakespeare"
+        "question": "What number comes before 12?",
+        "optionA": "10",
+        "optionB": "11",
+        "optionC": "12",
+        "optionD": "13",
+        "answer": "11",
+	"image": "null"
     },
 
     {
-        "question": "What did the crocodile swallow in Peter Pan?",
-        "optionA": "A Book",
-        "optionB": "A Computer",
-        "optionC": "A pair of shoes",
-        "optionD": "Alarm Clock",
-        "answer": "Alarm Clock"
+        "question": "What is the given number?",
+        "optionA": "Fifteen",
+        "optionB": "Sixteen",
+        "optionC": "Seventeen",
+        "optionD": "Eighteen",
+        "answer": "Eighteen",
+	"image": "18.jpg"
     },
 
     {
-        "question": "Which is the only mammal that can’t jump?",
-        "optionA": "Dog",
-        "optionB": "Elephant",
-        "optionC": "Goat",
-        "optionD": "Lion",
-        "answer": "Elephant"
+        "question": "What do you get when you add 2 apples with 2 more apples?",
+        "optionA": "5 apples",
+        "optionB": "4 apples",
+        "optionC": "3 apples",
+        "optionD": "2 apples",
+        "answer": "4 apples",
+	"image": "4apples.jpg"
     },
 
     {
-        "question": "Who lived at 221B, Baker Street, London?",
-        "optionA": "Tony Stark",
-        "optionB": "Morgan Freeman",
-        "optionC": "Sherlock Holmes",
-        "optionD": "Samuel L. Jackson",
-        "answer": "Sherlock Holmes"
+        "question": "You have 5 candies. Someone took 3 candies from you. How many candies do you have left?",
+        "optionA": "6 candies",
+        "optionB": "4 candies",
+        "optionC": "2 candies",
+        "optionD": "1 candy",
+        "answer": "2 candies",
+	"image": "2 candies.jpg"
     },
 
     {
-        "question": "What colour is a panda?",
-        "optionA": "Green and Yellow",
-        "optionB": "Blue and Red",
-        "optionC": "Green and White",
-        "optionD": "Black and White",
-        "answer": "Black and White"
+        "question": "How many dogs are there?",
+        "optionA": "3",
+        "optionB": "4",
+        "optionC": "5",
+        "optionD": "6",
+        "answer": "5",
+	"image": "5dogs.jpg"
     },
 
     {
-        "question": "Where is the smallest bone in the human body?",
-        "optionA": "The Chest",
-        "optionB": "The Ear",
-        "optionC": "The Legs",
-        "optionD": "The Hands",
-        "answer": "The Ear"
+        "question": "How many rabbits are there?",
+        "optionA": "5",
+        "optionB": "7",
+        "optionC": "9",
+        "optionD": "10",
+        "answer": "7",
+	"image": "7rabbits.jpg"
     },
 
     {
-        "question": "What does the roman numeral C represent?",
-        "optionA": "100",
-        "optionB": "10",
-        "optionC": "10,000",
-        "optionD": "1,000,000",
-        "answer": "100"
-    },
-
-    {
-        "question": "What takes place in Hong Kong's Happy Valley?",
-        "optionA": "Chicken Wrestling",
-        "optionB": "Horse racing",
-        "optionC": "Street Racing",
-        "optionD": "Arm Wrestling",
-        "answer": "Horse racing"
-    },
-
-    {
-        "question": "Who painted the Mona Lisa?",
-        "optionA": "Alexander Graham Bell",
-        "optionB": "Sir Isaac Newton",
-        "optionC": "Leonardo Da Vinci",
-        "optionD": "Albert Einstein",
-        "answer": "Leonardo Da Vinci"
-    },
-
-    {
-        "question": "What’s the most important book in the Moslem religion?",
-        "optionA": "The Koran",
-        "optionB": "The Dictionary",
-        "optionC": "The Bible",
-        "optionD": "The Chemistry text Book",
-        "answer": "The Koran"
-    },
-
-    {
-        "question": "What’s the capital of Ethiopia?",
-        "optionA": "Cape Town",
-        "optionB": "San Francisco",
-        "optionC": "Abuja",
-        "optionD": "Syndey",
-        "answer": "Addis Ababa"
-    },
-
-    {
-        "question": "How many squares are there on a chess board?",
-        "optionA": "128",
-        "optionB": "64",
-        "optionC": "32",
-        "optionD": "256",
-        "answer": "64"
-    },
-
-    {
-        "question": "Who invented the electric light bulb?",
-        "optionA": "Tom Cruise",
-        "optionB": "Barack Obama",
-        "optionC": "Wole Soyinka",
-        "optionD": "Thomas Edison",
-        "answer": "Thomas Edison"
-    },
-
-    {
-        "question": "What are the first three words of the bible?",
-        "optionA": "be with everyone",
-        "optionB": "Again Jesus asked",
-        "optionC": "In the beginning",
-        "optionD": "At that time",
-        "answer": "In the beginning"
+        "question": "How many birds are there?",
+        "optionA": "1",
+        "optionB": "2",
+        "optionC": "3",
+        "optionD": "4",
+        "answer": "4",
+	"image": "4birds.jpg"
     }
+
+        
 ]

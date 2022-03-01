@@ -6,7 +6,7 @@ import {
   AspectRatio,
   Image,
   Text,
-  Link,
+  
   Button,
   Stack,
   Spacer,
@@ -14,11 +14,11 @@ import {
  
 } from "@chakra-ui/react";
 import Navlink from "./Navlink";
-
+import { Link } from "react-router-dom";
 function TutorialCards(props) {
   const { product, summary, longLine, image ,link} = props;
    const { colorMode, toggleColorMode} = useColorMode();
-  console.log(link);
+  
   return ( 
      <Box rounded="20px"  margin="5" maxW="32rem" overflow="hidden" bg={ colorMode === "dark" ? "gray.700": "gray.200"} mt={10} border='1px' borderColor='green.200' boxShadow='2xl '  >
         <Image src=
@@ -42,11 +42,11 @@ function TutorialCards(props) {
           </Stack>
           <Flex>  
             <Spacer />
-            <Navlink to={link} name={product}/>
-            {/* <Button variant="solid" 
-              colorScheme="green" size="lg">
+            
+             <Button variant="solid" 
+              colorScheme="green" size="lg"><Link to={link}>{product}</Link>
                
-            </Button> */}
+            </Button> 
           </Flex>
         </Box>
       </Box>

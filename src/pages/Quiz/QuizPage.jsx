@@ -20,7 +20,7 @@ function Tutorial() {
       summary: "Learn Alphabets with animation and interactive videos",
       longLine: "There are lots of animations and videos about the alphabets",
       image:alphabetImage,
-      link:"/alphabetQuiz"
+      link:'/play/NumberQuiz'
     },
     {
       id: "2",
@@ -29,7 +29,7 @@ function Tutorial() {
         "Teach your child animal names easily with simple cartoons",
       longLine: "There are lots of animations and videos about the animals",
       image:animalImage,
-      link:"/animalQuiz"
+      link:'/play/NumberQuiz'
     },
     {
       id: "3",
@@ -37,7 +37,7 @@ function Tutorial() {
       summary: "Colors are fun",
       longLine: "Try our fun videos about colors and have fun with colors",
       image:colorsImage,
-      link:"/colorQuiz"
+      link:'/play/NumberQuiz'
     },
     {
       id: "4",
@@ -55,7 +55,7 @@ function Tutorial() {
         "LEarn all kinds of shapes",
       longLine: "Circle to square all can be fun with animations and fun videos",
       image:shapesImage,
-      link:"/shapesQuiz"
+      link:'/play/NumberQuiz'
     },
     {
       id: "6",
@@ -64,7 +64,7 @@ function Tutorial() {
         "Help your child to learn patterns ",
       longLine: "All the patterns simplified",
       image:pattersImage,
-      link:"/patternQuiz"
+      link:'/play/NumberQuiz'
     }
   ];
   return (
