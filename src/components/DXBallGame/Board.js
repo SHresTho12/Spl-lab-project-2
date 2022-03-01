@@ -9,6 +9,7 @@ import PaddleHit from '../../Utils/DXBallGame/PaddleHit';
 import PlayerStats from './PlayerStats';
 import AllBroke from '../../Utils/DXBallGame/AllBroke';
 import ResetBall from '../../Utils/DXBallGame/ResetBall';
+import { Box } from '@chakra-ui/react';
 
 let bricks = [];
 
@@ -114,7 +115,7 @@ export default function Board() {
 
     return (
 
-    <div style={{ textAlign: "center" }}>
+    <Box justifyContent='center' style={{ textAlign: "center" }}>
       <h1 className="gameHeader">DX Ball Game</h1>
       <canvas
         id="canvas"
@@ -133,7 +134,7 @@ export default function Board() {
             : window.innerWidth - (window.innerWidth * 20) / 100
         }
       />
-    </div>
+    </Box>
 
         // <canvas 
         //     id="canvas" 
