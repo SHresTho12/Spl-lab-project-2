@@ -1,3 +1,4 @@
+import { linkWithPopup } from 'firebase/auth'
 import React from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { Layout } from '../components/Layout'
@@ -20,11 +21,11 @@ function GamePage() {
         <div className="navigation__nav">
             <ul className="navigation__list">
 
-                <li className="navigation__item"><a href="../../index.html" className="navigation__link"><span>01</span>Home</a></li>
+                <li className="navigation__item"><Link to='/' className="navigation__link"><span>01</span>Home</Link></li>
 
-            <li className="navigation__item"><a href="../Games/games.html" className="navigation__link"><span>02</span>Games</a></li>
-            <li className="navigation__item"><a href="../Videos/videos.html" className="navigation__link"><span>03</span>Video Lessons</a></li>
-            <li className="navigation__item"><a href="../Games/QuizGame/quizhome.html" className="navigation__link"><span>04</span>Quizzes</a></li>
+            <li className="navigation__item"><Link to='/games' className="navigation__link"><span>02</span>Games</Link></li>
+            <li className="navigation__item"><Link to='/tutorials' className="navigation__link"><span>03</span>Video Lessons</Link></li>
+            <li className="navigation__item"><Link to="/quizzes" className="navigation__link"><span>04</span>Quizzes</Link></li>
 
             </ul>
         </div>
