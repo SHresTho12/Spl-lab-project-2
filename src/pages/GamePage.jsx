@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { Layout } from '../components/Layout'
 import Navlink from '../components/Navlink'
 import '../Css/style.css'
-
+import { Link } from 'react-router-dom'
 function GamePage() {
   return (
 
@@ -146,22 +146,26 @@ function GamePage() {
                   <div className="game-card__picture game-card__picture--4">
                       &nbsp;
                   </div>
-                  <h4 className="game-card__heading">
-                      <span className="game-card__heading-span game-card__heading-span--2">Say the Right Number</span>
+
+                  <h4 class="game-card__heading">
+                      <span class="game-card__heading-span game-card__heading-span--2">DX Ball</span>
+
                   </h4>
                   
                   <div className="card__details">
                     <ul>
                         <li>
-                            Guess the right number
+                            Hit the blocks with the ball
                         </li>
                         <li>
-                            If Stuck see the hints
+                           Move the paddle
                         </li>
                         <li>
-                            Learn number
+                           New Levels
                         </li>
-                        <li><a href="../quizzes/voiceQuiz.html" className="game-btn game-btn-cta">Play Now</a></li>
+
+                        <li><Link to='/DxBall' class="game-btn game-btn-cta">Play</Link></li>
+
                     </ul>
                         
                         
@@ -203,7 +207,38 @@ function GamePage() {
             </div>
           </div>
           
-
+          <div class="col-1-of-3 co-2">
+            <div class="game-card">
+              <div class="game-card-side">
+                  <div class="game-card__picture game-card__picture--5">
+                      &nbsp;
+                  </div>
+                  <h4 class="game-card__heading">
+                      <span class="game-card__heading-span game-card__heading-span--1">Match the Spelling</span>
+                  </h4>
+                  
+                  <div class="card__details">
+                    <ul>
+                        <li>
+                            Match the same Alphabets
+                        </li>
+                        <li>
+                            If Stuck Get hints
+                        </li>
+                        <li>
+                            Try to Use less flips
+                        </li>
+                        <li>
+                            
+                                <a href="../../../blocks_game/spelling_game/spelling_game.html" class="game-btn game-btn-cta">Play Now</a>
+                            
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+              
+            </div>
+          </div>
 
        </div>
     </div>
