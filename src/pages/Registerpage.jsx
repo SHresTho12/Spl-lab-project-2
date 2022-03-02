@@ -18,6 +18,7 @@ import { Layout } from '../components/Layout'
 import { useAuth } from '../Contexts/AuthContexts'
 import useMounted from '../hooks/useMounted'
 import Axios from 'axios'; 
+import { getAuth } from "firebase/auth";
 
 
 export default function Registerpage() {
@@ -28,14 +29,19 @@ export default function Registerpage() {
   const toast =  useToast()
   const mounted = useMounted()
   const {register,signInWithGoogle} = useAuth()
-  const signUp = () => {
-    Axios.post("http://localhost:3001/api/signup", {
+
+  const auth = getAuth();
+  const user = auth.currentUser;
+  const {currentUser} = useAuth();
+  const insertUserToDB = () => {
+      Axios.post("http://localhost:3001/api/signup", {
       email : email,
-      password : password
-    }).then(() => {
-      alert("one row inserted");
-    })
+      uid : user.getUid()
+      }).then(() => {
+        alert("one row inserted");
+      })
   }
+
   return (
     <Layout>
       <Heading textAlign='center' my={12}>
@@ -94,7 +100,7 @@ export default function Registerpage() {
                 required
               />
             </FormControl>
-            <Button onClick={signUp} isLoading={isSubmitting} type='submit' colorScheme='primary' size='lg' fontSize='md'>
+            <Button onClick={insertUserToDB} isLoading={isSubmitting} type='submit' colorScheme='primary' size='lg' fontSize='md'>
               Sign up
             </Button>
           </Stack>
