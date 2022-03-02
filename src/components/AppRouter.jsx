@@ -15,7 +15,7 @@ import TutorialsPage from '../pages/TutorialPage/Tutorial'
 import MixOrMatch from '../pages/Games/MemoryGame/MixOrMatch'
 import DrawingApp from '../pages/Games/DrawingApp/DrawingApp'
 import Quizzes from '../pages/Quiz/QuizPage'
-
+import VoiceCard from '../pages/VoiceCard'
 
 import Play from './NumberQuiz';
 import QuizSummary from './QuizSummary';
@@ -41,6 +41,8 @@ export default function AppRouter(props) {
           <Route exact path='/games' component={GamePage} />
           <Route exact path='/quizzes' component={Quizzes} />
 
+
+          <Route exact path='/com' component={VoiceCard}/>
           <Route exact path='/NumberTutorial' component={NumberTutorialPage}/>
           <Route exact path='/ColorsTutorials' component={ColorsTutorials}/>
           <Route exact path='/AlphabetsTutorials' component={AlphabetsTutorials}/>
