@@ -36,7 +36,7 @@ export default function Registerpage() {
   const insertUserToDB = () => {
       Axios.post("http://localhost:3001/api/signup", {
       email : email,
-      uid : user.getUid()
+      //uid : user.getUid()
       }).then(() => {
         alert("one row inserted");
       })

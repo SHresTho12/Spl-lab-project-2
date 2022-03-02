@@ -25,9 +25,9 @@ app.use(bodyparser.urlencoded({extended : true}));
 
 app.post('/api/signup', (req, res) => {
     const email = req.body.email;
-    const uid = 
-    const queryInsert = "INSERT INTO spldb.children (uid, email) VALUES (?)";
-    db.query(queryInsert, [uid, email], (err, result) => {
+    //const uid = 
+    const queryInsert = "INSERT INTO spldb.children (email) VALUES (?)";
+    db.query(queryInsert, [email], (err, result) => {
         console.log(result);
     });
 });
