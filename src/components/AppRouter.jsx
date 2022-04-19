@@ -22,7 +22,7 @@ import DxBall from './DXBallGame/Board'
 
 
 
-
+import Hangman from "../components/Hangman/HangmanBoard";
 import Play from './NumberQuiz';
 import QuizSummary from './QuizSummary';
 import NumberTutorialPage from '../pages/TutorialPage/NumberTutorialPage'
@@ -50,7 +50,7 @@ export default function AppRouter(props) {
           <Route exact path='/memoryGameMixOrMatch' component={MixOrMatch}/>
           <Route exact path='/games' component={GamePage} />
           <Route exact path='/quizzes' component={Quizzes} />
-
+          <Route exact path='/hangman' component={Hangman} />
 
           <Route exact path='/com' component={VoiceCard}/>
           <Route exact path='/NumberTutorial' component={NumberTutorialPage}/>
