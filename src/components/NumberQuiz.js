@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Helmet } from "react-helmet";
 import M from "materialize-css";
 import classnames from "classnames";
+
 import {
   Button,
   chakra,
@@ -23,7 +24,14 @@ import {
 import questions from "../Resources/QuizGame/Questions/NumberQuestions.json";
 import isEmpty from "../Utils/is-empty";
 import { Layout } from "./Layout";
-
+import axios from "axios";
+import { useAuth } from "../Contexts/AuthContexts";
+const playSessionScore = {
+  CPGID: "Number Quiz",
+  UserID: null,
+  GameID: "Number",
+  GameScore: 0,
+};
 class Play extends Component {
   constructor(props) {
     super(props);
@@ -60,6 +68,7 @@ class Play extends Component {
     );
     this.startTimer();
   }
+  //Database
 
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -382,7 +391,13 @@ class Play extends Component {
       });
     }
   };
-
+  handleDataSubmit = (playSessionScore) => {
+    axios
+      .post("http://localhost:3001/gamesPlayed", playSessionScore)
+      .then((response) => {
+        console.log(response.data);
+      });
+  };
   endGame = () => {
     alert("Quiz has eneded!");
     const { state } = this;

@@ -35,8 +35,8 @@ export default function AppRouter(props) {
           <Route path="/play/NumberQuiz" exact component={Play} />
           <Route path="/play/quizSummary" exact component={QuizSummary} />
           <Route exact path='/memoryGameMixOrMatch' component={MixOrMatch}/>
-          <Route exact path='/games' component={GamePage} />
-          <Route exact path='/quizzes' component={Quizzes} />
+          <ProtectedRoute exact path='/games' component={GamePage} />
+          <ProtectedRoute exact path='/quizzes' component={Quizzes} />
 
           <Route exact path='/NumberTutorial' component={NumberTutorialPage}/>
           <Route exact path='/ColorsTutorials' component={ColorsTutorials}/>
