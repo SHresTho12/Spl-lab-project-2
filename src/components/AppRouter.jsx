@@ -14,7 +14,7 @@ import GamePage from '../pages/GamePage'
 import TutorialsPage from '../pages/TutorialPage/Tutorial'
 import MixOrMatch from '../pages/Games/MemoryGame/MixOrMatch'
 import Quizzes from '../pages/Quiz/QuizPage'
-
+import ChildInfo from '../pages/ChildrenInformation'
 
 import Play from './NumberQuiz';
 import QuizSummary from './QuizSummary';
@@ -52,6 +52,7 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/protected-page' component={ProtectedPage} />
           <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
           <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
+          <ProtectedRoute exact path='/info' component={ChildInfo} />
           <Route exact path='*' component={NotfoundPage} />
 
 
