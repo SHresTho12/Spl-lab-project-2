@@ -81,7 +81,7 @@ class MixOrMatch {
    
     
      if(currentUSer !== null) playSessionScore.UserID = currentUSer.uid;
-    playSessionScore.GameScore = playSessionScore.GameScore + this.score;
+    playSessionScore.GameScore =  this.score ;
     console.log(playSessionScore);
     if(playSessionScore.UserID !== null){
       axios.post("http://localhost:3001/gamesPlayed",playSessionScore).then((response) => {
@@ -95,7 +95,7 @@ class MixOrMatch {
   victory() {
     clearInterval(this.countdown);
      if(currentUSer !== null) playSessionScore.UserID = currentUSer.uid;
-    playSessionScore.GameScore = playSessionScore.GameScore + this.score;
+    playSessionScore.GameScore = this.score ;
     console.log(playSessionScore);
     if(playSessionScore.UserID !== null){
       axios.post("http://localhost:3001/gamesPlayed",playSessionScore).then((response) => {
