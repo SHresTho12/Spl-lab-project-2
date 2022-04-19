@@ -24,6 +24,7 @@ export default function Profilepage() {
       <Container maxW='container.lg' overflowX='auto' py={4}>
         <chakra.pre>
           {JSON.stringify(currentUSer , null , 2)}
+          
         </chakra.pre>
       </Container>
     </Layout>

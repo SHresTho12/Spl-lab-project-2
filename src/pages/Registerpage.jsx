@@ -17,15 +17,23 @@ import DividerWithText from '../components/DividerWithText'
 import { Layout } from '../components/Layout'
 import { useAuth } from '../Contexts/AuthContexts'
 import useMounted from '../hooks/useMounted'
-
+import  axios  from 'axios'
 export default function Registerpage() {
   const history = useHistory()
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toast =  useToast()
   const mounted = useMounted()
   const {register,signInWithGoogle} = useAuth()
+  const {currentUSer} = useAuth()
+  const initialvalue = {
+    Uid:"",
+    Name:"",
+    Email:"",
+    Number:""
+  }
   return (
     <Layout>
       <Heading textAlign='center' my={12}>
@@ -48,7 +56,17 @@ export default function Registerpage() {
 
            setIsSubmitting(true)
            register(email , password)
-           .then((response) => console.log(response))
+           .then((response) => {console.log(response);
+          
+          initialvalue.Uid=response.user.uid;
+          initialvalue.Name = name;
+          initialvalue.Email = email;
+          initialvalue.Number="";
+          axios.post("http://localhost:3001/profile",initialvalue).then((response) => {
+            console.log(response.data);
+      
+    });
+          })
            .catch((error) => {
              console.log(error.message)
            toast({
@@ -58,12 +76,24 @@ export default function Registerpage() {
                isClosable: true
              })}
           
-             ).finally(() => mounted.current &&setIsSubmitting(false))
+             ).finally(() => {
+               mounted.current &&setIsSubmitting(false);
+               //let obj = JSON.stringify(currentUSer , null , 2);
+              
+              
+              //initialvalue.Uid=JSON.stringify(currentUSer.email);
+              console.log(initialvalue);
+            
+            })
            
 
           }}
         >
           <Stack spacing='6'>
+            <FormControl id='name'>
+              <FormLabel>Enter Name</FormLabel>
+              <Input value={name} onChange={(e) => setName(e.target.value)} name='name' type='name' autoComplete='name' required />
+            </FormControl>
             <FormControl id='email'>
               <FormLabel>Email address</FormLabel>
               <Input value={email} onChange={(e) => setEmail(e.target.value)} name='email' type='email' autoComplete='email' required />
