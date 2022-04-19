@@ -45,21 +45,21 @@ function GamePage() {
                       &nbsp;
                   </div>
                   <h4 className="game-card__heading">
-                      <span className="game-card__heading-span game-card__heading-span--3">Draw the Shape</span>
+                      <span className="game-card__heading-span game-card__heading-span--3">Hang Man</span>
                   </h4>
                   
                   <div className="card__details">
                     <ul>
                         <li>
-                          Draw the shapes free hand
+                         Typing Word
                         </li>
                         <li>
                            Get Hints
                         </li>
                         <li>
-                            Free hand drawing
+                            Save the Man
                         </li>
-                        <li> <Link to='/drawing' className="game-btn game-btn-cta">Play</Link></li>
+                        <li> <Link to='/drawing' className="game-btn game-btn-cta"><Navlink to='/hangman' name='Hangman' /></Link></li>
                     </ul>
                        
                         
