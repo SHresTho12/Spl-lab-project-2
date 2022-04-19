@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Layout } from '../components/Layout'
 import Navlink from '../components/Navlink'
 import '../Css/style.css'
@@ -90,8 +91,9 @@ function GamePage() {
                                     Try to Use less flips
                                 </li>
                                 <li>
+                                    <Link to='/drawing' className="game-btn game-btn-cta"><Navlink to='/memoryGameMixOrMatch' name="MixOrMatch" /></Link>
                                     
-                                        <Navlink to='/memoryGameMixOrMatch' name="MixOrMatch" />
+                                        
                                        
                                 </li>
                             </ul>
