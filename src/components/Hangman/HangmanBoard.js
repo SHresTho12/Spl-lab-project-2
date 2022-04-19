@@ -6,8 +6,8 @@ import Word from './Word';
 import Popup from './Popup';
 import Notification from './Notification';
 import { showNotification as show, checkWin } from './helper';
+import '../../Css/hangman.css';
 
-// import './App.css';
 
 const words = ['four', 'six', 'thirteen', 'ten', 'nine', 'eight', 'seven'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
