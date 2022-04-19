@@ -3,9 +3,15 @@ import { Layout } from '../components/Layout'
 import { Badge, chakra, Code, Container, Heading } from '@chakra-ui/react'
 import { Card } from '../components/Card'
 import { useAuth } from '../Contexts/AuthContexts'
-
+import { useEffect } from 'react'
+import  axios  from 'axios'
 export default function Profilepage() {
   const {currentUSer} = useAuth()
+  useEffect(() => {
+    axios.get("http://localhost:3001/profile").then((response) => {
+      console.log(response.data);
+    });
+  }, []);
   return (
     <Layout>
       <Heading>

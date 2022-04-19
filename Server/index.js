@@ -1,7 +1,8 @@
 const express = require("express"); //import ihe express
-
+const cors = require("cors");
 const app = express(); //create a instance of the express app
-
+app.use(express.json());
+app.use(cors());
 const db = require("./models");
 
 //Routers
