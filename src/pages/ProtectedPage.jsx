@@ -1,18 +1,23 @@
-import { Heading, Container, Badge, VStack, HStack, DrawerHeader } from '@chakra-ui/react'
+import { Heading, Container, Badge, VStack, HStack, DrawerHeader, Box, SimpleGrid  } from '@chakra-ui/react'
 import { calculateBackoffMillis } from '@firebase/util';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Layout } from '../components/Layout'
 import { useAuth } from '../Contexts/AuthContexts';
-
-
+import mixormatchimage from '../images/MemoryGame/question.gif'
+import ReportBox from '../components/ReportBox';
+import hangmanImage from '../images/MemoryGame/hangMan.jpg'
+import dxImage from '../images/MemoryGame/dx.jpeg'
+import ChartReport from '../components/ChartReport';
 
 export default function ProtectedPage() {
   const [gameplayed , setGameplayed] = useState([]);
   let uid;
 let Name;
 let users;
-
+let score1 =0;
+let score2 =0;
+let score3 =0;
 let AvarageScore1 = 0;
 let gamePlayedNum1 = 0;
 let AvarageScore2 = 0;
@@ -23,7 +28,7 @@ let UserAvarageScore;
 let quizTaken;
 let AvarageScoreQuiz;
 let UserAvarageScoreQuiz;
-const games=["MixOrMatch","Hangman","DxBall"];
+
   const {currentUSer} = useAuth();
   uid = currentUSer.uid;
   useEffect(() => {
@@ -70,10 +75,22 @@ const games=["MixOrMatch","Hangman","DxBall"];
 
 
         }
+        else{
+          if(CPGID === 'MixOrMatch'){ score1 = score1 + score;
+          
+        }
+          if(CPGID === 'Hangman') {score2 = score2 + score;
+         
+       }
+          if(CPGID ===  'DxBall') {score3 = score3 + score;
+         
+        }
+        }
       }
 
       )
-      if(AvarageScore1>0) AvarageScore1 = AvarageScore1 / gamePlayedNum1;
+      if(AvarageScore1>0) {AvarageScore1 = AvarageScore1 / gamePlayedNum1
+    score1 = Math.floor(score1 / Object.keys(gameplayed).length);};
       
      if(AvarageScore2>0) AvarageScore2 = AvarageScore2 / gamePlayedNum2;
       if(AvarageScore3>0) AvarageScore3 = AvarageScore3 / gamePlayedNum3;
@@ -81,15 +98,60 @@ const games=["MixOrMatch","Hangman","DxBall"];
   calculateAvarage();
   return (
     <Layout>
-      <VStack>
-      <HStack>
-      <h1>{AvarageScore1}</h1>
-      <h1>{AvarageScore2}</h1>
-      <h1>{AvarageScore3}</h1>
-      </HStack>
+     <SimpleGrid columns={[1, 2, 3, 1, 2 , 3]}>
+          {/* {dataList.map(function (data) {
+            const { id, product, summary, longLine,image,link } = data;
+            return (
+              <div className="tutorial-cards"><TutorialCards
+                key={id}
+                product={product}
+                summary={summary}
+                longLine={longLine}
+                image={image}
+                link={link}
+              /></div>
+            );
+          })} */}
 
 
-      </VStack>
+        <ReportBox
+        
+        GameName = {"MixOrMAtch"}
+        AvarageScore={AvarageScore1}
+         NormalScore ={score1}
+         image ={mixormatchimage}
+        ></ReportBox>
+        <ReportBox
+GameName = {"Hangman"}
+        AvarageScore={AvarageScore2}
+         NormalScore ={score2}
+         image ={hangmanImage}
+        ></ReportBox>
+        <ReportBox
+       GameName = {"DxBall"}
+        AvarageScore={AvarageScore3}
+         NormalScore ={score3}
+         image ={dxImage}
+        
+        ></ReportBox>
+
+
+
+
+        </SimpleGrid>
+        {/* <ChartReport
+        
+        AvarageScore1 ={AvarageScore1}
+        AvarageScore2 = {AvarageScore2}
+        AvarageScore3 = {AvarageScore3}
+        NormalScore1 = {score1}
+        NormalScore2 = {score2}
+        NormalScore3 = {score3}
+        
+        
+        ></ChartReport> */}
+
+
     </Layout>
   )
 }
