@@ -3,7 +3,7 @@ import React from 'react'
 const Notification = ({ showNotification }) => {
   return (
     <div className={`notification-container ${showNotification ? 'show' : ''}`}>
-      <p>You have already entered this letter</p>
+      <h2>You have already entered this letter</h2>
     </div>
   )
 }

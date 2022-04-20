@@ -1,4 +1,5 @@
 import React from 'react'
+import {ImCross} from 'react-icons/fa'
 
 const WrongLetters = ({ wrongLetters }) => {
 
@@ -6,7 +7,7 @@ const WrongLetters = ({ wrongLetters }) => {
     <div className="wrong-letters-container">
       <div>
         {wrongLetters.length > 0 && 
-          <p>Wrong</p>
+          <p>Wrong ❌</p>
         }
         {wrongLetters
           .map((letter, i) => <span key={i}>{letter}</span>)

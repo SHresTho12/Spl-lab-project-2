@@ -14,8 +14,24 @@
     overflow: hidden;
   }
   
-  h1 {
+  .game-header p {
     margin: 20px 0 0;
+    font-size: xx-large;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .game-header h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    color:burlywood;
+  }
+
+  .game-header h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    color:burlywood;
   }
   
   .game-container {
@@ -44,10 +60,16 @@
     display: flex;
     flex-direction: column;
     text-align: right;
+    font-size: large;
+    color: burlywood;
   }
   
   .wrong-letters-container p {
     margin: 0 0 5px;
+    color: white;
+    background-color: darkred;
+    font-size: larger;
+    
   }
   
   .wrong-letters-container span {

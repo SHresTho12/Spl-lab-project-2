@@ -4,9 +4,12 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <h1>Hangman - A word game</h1>
+    <div className='game-header'>
+    <p>Hangman - A word game</p>
       <h2>Spell numbers</h2>
-      <p>Find the hidden word - Enter a letter</p>
+      <h3>Find the hidden word - Enter a letter</h3>
+    </div>
+      
     </>
   )
 }
