@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 //import './MemoryGame'
  import '../../../Css/style.css'
 import questionGif from '../../../images/MemoryGame/question.gif'
@@ -8,41 +8,35 @@ import hPic from '../../../images/MemoryGame/h.jpg'
 import jPic from '../../../images/MemoryGame/j.jpg'
 import kPic from '../../../images/MemoryGame/k.jpeg'
 import mPic from '../../../images/MemoryGame/m.jpg'
-function MixOrMatch() {
-  //audio controller for all kinds of moves and matches
+import  axios  from 'axios'
+import { useAuth } from '../../../Contexts/AuthContexts'
+let users;
+let userName;
+let UserUid;
+const GameName ="Memory";
+const GameID = "MixOrMatch";
+const playSessionScore = {
+    CPGID:"MixOrMatch",
+    UserID:null,
+    GameID:"Memory",
+    GameScore:0
+  }
 
-class AudioController {
-  constructor() {
-    this.bgMusic = new Audio("../../Assests/Audio/creepy.mp3");
-    this.flipSound = new Audio("../../Assests/Audio/flip.wav");
-    this.matchSound = new Audio("../../Assests/Audio/match.wav");
-    this.victorySound = new Audio("../../Assests/Audio/victory.wav");
-    this.gameOverSound = new Audio("../../Assests/Audio/gameOver.wav");
-    this.bgMusic.volume = 0.5;
-    this.bgMusic.loop = true;
-  }
-  startMusic() {
-    this.bgMusic.play();
-  }
-  stopMusic() {
-    this.bgMusic.pause();
-    this.bgMusic.currentTime = 0;
-  }
-  flip() {
-    this.flipSound.play();
-  }
-  match() {
-    this.matchSound.play();
-  }
-  victory() {
-    this.stopMusic();
-    this.victorySound.play();
-  }
-  gameOver() {
-    this.stopMusic();
-    this.gameOverSound.play();
-  }
-}
+function MixOrMatch(props) {
+  //audio controller for all kinds of moves and matches
+//Database Works
+const {currentUSer} = useAuth();
+ 
+useEffect(() => {
+    axios.get("http://localhost:3001/profile").then((response) => {
+      users =response.data;
+     
+    });
+  }, []);
+
+
+//Database Work Done
+
 //Creating a Game Class
 class MixOrMatch {
   constructor(totalTime, cards) {
@@ -52,10 +46,12 @@ class MixOrMatch {
     this.timer = document.getElementById("time-remaining");
     this.ticker = document.getElementById("flips");
     this.cardScore = document.getElementById("score");
-    this.audioController = new AudioController();
+    
     this.score = 0;
   }
-
+  updateGameSession(){
+    
+  }
   startGame() {
     this.totalClicks = 0;
     this.timeRemaining = this.totalTime;
@@ -63,7 +59,7 @@ class MixOrMatch {
     this.matchedCards = [];
     this.busy = true;
     setTimeout(() => {
-      this.audioController.startMusic();
+      
       this.shuffleCards(this.cardsArray);
       this.countdown = this.startCountdown();
       this.busy = false;
@@ -74,6 +70,7 @@ class MixOrMatch {
   }
   startCountdown() {
     return setInterval(() => {
+      
       this.timeRemaining--;
       this.timer.innerText = this.timeRemaining;
       if (this.timeRemaining === 0) this.gameOver();
@@ -81,13 +78,33 @@ class MixOrMatch {
   }
   gameOver() {
     clearInterval(this.countdown);
-    this.audioController.gameOver();
+   
+    
+     if(currentUSer !== null) playSessionScore.UserID = currentUSer.uid;
+    playSessionScore.GameScore =  this.score ;
+    console.log(playSessionScore);
+    if(playSessionScore.UserID !== null){
+      axios.post("http://localhost:3001/gamesPlayed",playSessionScore).then((response) => {
+            console.log(response.data);
+      
+    });
+    }
     document.getElementById("game-over-text").classList.add("visible");
   }
+
   victory() {
     clearInterval(this.countdown);
-    this.audioController.victory();
+     if(currentUSer !== null) playSessionScore.UserID = currentUSer.uid;
+    playSessionScore.GameScore = this.score ;
+    console.log(playSessionScore);
+    if(playSessionScore.UserID !== null){
+      axios.post("http://localhost:3001/gamesPlayed",playSessionScore).then((response) => {
+            console.log(response.data);
+      
+    });
+    }
     document.getElementById("victory-text").classList.add("visible");
+    
   }
   hideCards() {
     this.cardsArray.forEach((card) => {
@@ -98,7 +115,7 @@ class MixOrMatch {
   //Flipping a Card
   flipCard(card) {
     if (this.canFlipCard(card)) {
-      this.audioController.flip();
+      
       this.totalClicks++;
       this.ticker.innerText = this.totalClicks;
       card.classList.add("visible");
@@ -128,8 +145,8 @@ class MixOrMatch {
     card2.classList.add("matched");
     card1.classList.remove("hints");
     card2.classList.remove("hints");
-    this.audioController.match();
-    if (this.matchedCards.length === this.cardsArray.length) this.victory();
+    
+    if (this.matchedCards.length === this.cardsArray.length){ this.victory();}
   }
   cardMismatch(card1, card2) {
     this.busy = true;
@@ -137,7 +154,7 @@ class MixOrMatch {
       card1.classList.remove("visible");
       card2.classList.remove("visible");
       this.busy = false;
-    }, 1000);
+    }, 500);
   }
   shuffleCards(cardsArray) {
     // Fisher-Yates Shuffle Algorithm.
@@ -170,7 +187,7 @@ function ready() {
   let cards = Array.from(document.getElementsByClassName("memory-card"));
   let game = new MixOrMatch(100, cards);
   let hintButton = document.getElementById("hint-button");
-
+  
   hintButton.addEventListener("click", () => {
     let hintCards = Array.from(document.getElementsByClassName("hint"));
     hintCards.forEach((hintCard) => {

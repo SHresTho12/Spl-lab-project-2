@@ -16,9 +16,13 @@ import MixOrMatch from '../pages/Games/MemoryGame/MixOrMatch'
 import DrawingApp from '../pages/Games/DrawingApp/DrawingApp'
 import Quizzes from '../pages/Quiz/QuizPage'
 
+import ChildInfo from '../pages/ChildrenInformation'
+
+
 import VoiceCard from '../pages/VoiceCard'
 
 import DxBall from './DXBallGame/Board'
+
 
 
 
@@ -47,8 +51,8 @@ export default function AppRouter(props) {
           <Route exact path='/DxBall' component={DxBall}/>
 
           <Route exact path='/memoryGameMixOrMatch' component={MixOrMatch}/>
-          <Route exact path='/games' component={GamePage} />
-          <Route exact path='/quizzes' component={Quizzes} />
+          <ProtectedRoute exact path='/games' component={GamePage} />
+          <ProtectedRoute exact path='/quizzes' component={Quizzes} />
 
 
           <Route exact path='/com' component={VoiceCard}/>
@@ -67,6 +71,7 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/protected-page' component={ProtectedPage} />
           <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
           <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
+          <ProtectedRoute exact path='/info' component={ChildInfo} />
           <Route exact path='*' component={NotfoundPage} />
 
 
