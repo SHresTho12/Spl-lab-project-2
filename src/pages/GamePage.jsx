@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { Layout } from '../components/Layout'
 import Navlink from '../components/Navlink'
 import '../Css/style.css'
-import { Link } from 'react-router-dom'
+
 function GamePage() {
   return (
 
