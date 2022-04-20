@@ -1,6 +1,8 @@
 import { linkWithPopup } from 'firebase/auth'
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { Layout } from '../components/Layout'
 import Navlink from '../components/Navlink'
 import '../Css/style.css'
@@ -91,9 +93,10 @@ function GamePage() {
                                 <li>
                                     Try to Use less flips
                                 </li>
-                                <li><Link to='/memoryGameMixOrMatch' className="game-btn game-btn-cta">Play</Link>
-                                    
-                                    
+
+                                <li>
+                                    <Link to='/drawing' className="game-btn game-btn-cta"><Navlink to='/memoryGameMixOrMatch' name="MixOrMatch" /></Link>
+
                                        
                                 </li>
                             </ul>
