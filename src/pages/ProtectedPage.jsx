@@ -8,7 +8,7 @@ import mixormatchimage from '../images/MemoryGame/question.gif'
 import ReportBox from '../components/ReportBox';
 import hangmanImage from '../images/MemoryGame/hangMan.jpg'
 import dxImage from '../images/MemoryGame/dx.jpeg'
-import ChartReport from '../components/ChartReport';
+
 
 export default function ProtectedPage() {
   const [gameplayed , setGameplayed] = useState([]);
