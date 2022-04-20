@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.6.8",
+    "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mdi/font": "^4.4.95",
@@ -42,6 +42,11 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "browserslist": {
     "production": [

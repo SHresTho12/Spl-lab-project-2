@@ -13,8 +13,18 @@ import ResetPasswordPage from '../pages/ResetPasswordPage'
 import GamePage from '../pages/GamePage'
 import TutorialsPage from '../pages/TutorialPage/Tutorial'
 import MixOrMatch from '../pages/Games/MemoryGame/MixOrMatch'
+import DrawingApp from '../pages/Games/DrawingApp/DrawingApp'
 import Quizzes from '../pages/Quiz/QuizPage'
+
 import ChildInfo from '../pages/ChildrenInformation'
+
+
+import VoiceCard from '../pages/VoiceCard'
+
+import DxBall from './DXBallGame/Board'
+
+
+
 
 import Play from './NumberQuiz';
 import QuizSummary from './QuizSummary';
@@ -24,6 +34,7 @@ import AlphabetsTutorials from '../pages/TutorialPage/AlphabetsTutorials'
 import ShapesTutorial from '../pages/TutorialPage/ShapesTutorial'
 import AnimalTutorials from '../pages/TutorialPage/AnimalTutorials'
 import PatternsTutorials from '../pages/TutorialPage/PatternsTutorials'
+import Todo from '../pages/ToDo'
 export default function AppRouter(props) {
   return (
     <>
@@ -34,10 +45,17 @@ export default function AppRouter(props) {
         
           <Route path="/play/NumberQuiz" exact component={Play} />
           <Route path="/play/quizSummary" exact component={QuizSummary} />
+
+          <Route exact path='/drawing'  component={DrawingApp}/>
+
+          <Route exact path='/DxBall' component={DxBall}/>
+
           <Route exact path='/memoryGameMixOrMatch' component={MixOrMatch}/>
           <ProtectedRoute exact path='/games' component={GamePage} />
           <ProtectedRoute exact path='/quizzes' component={Quizzes} />
 
+
+          <Route exact path='/com' component={VoiceCard}/>
           <Route exact path='/NumberTutorial' component={NumberTutorialPage}/>
           <Route exact path='/ColorsTutorials' component={ColorsTutorials}/>
           <Route exact path='/AlphabetsTutorials' component={AlphabetsTutorials}/>
@@ -49,6 +67,7 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/login' component={Loginpage} />
           <ProtectedRoute exact path='/register' component={Registerpage} />
           <ProtectedRoute exact path='/profile' component={Profilepage} />
+          <ProtectedRoute exact path='/toDo' component={Todo} />
           <ProtectedRoute exact path='/protected-page' component={ProtectedPage} />
           <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
           <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
