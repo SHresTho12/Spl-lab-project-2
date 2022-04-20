@@ -29,6 +29,25 @@ let quizTaken;
 let AvarageScoreQuiz;
 let UserAvarageScoreQuiz;
 
+
+
+const chartData = [
+  {
+    gameName:"MixOrMatch",
+    AvarageScore:0,
+    NormalScore:0,
+  },
+    {
+    gameName:"Hangman",
+    AvarageScore:0,
+    NormalScore:0,
+  },
+    {
+    gameName:"Dxball",
+    AvarageScore:0,
+    NormalScore:0,
+  }
+]
   const {currentUSer} = useAuth();
   uid = currentUSer.uid;
   useEffect(() => {
@@ -62,18 +81,18 @@ let UserAvarageScoreQuiz;
         console.log(CPGID,)
         if(id === uid){
           if(CPGID === 'MixOrMatch'){ AvarageScore1 = AvarageScore1 + score;
+             score1 = score1 + score;
           gamePlayedNum1++;
           console.log(AvarageScore1);
         }
           if(CPGID === 'Hangman') {AvarageScore2 = AvarageScore2 + score;
+            score2 = score2 + score;
           gamePlayedNum2++;
        }
           if(CPGID ===  'DxBall') {AvarageScore3 = AvarageScore3 + score;
+            score3 = score3 + score;
           gamePlayedNum3++;
         }
-
-
-
         }
         else{
           if(CPGID === 'MixOrMatch'){ score1 = score1 + score;
@@ -89,13 +108,31 @@ let UserAvarageScoreQuiz;
       }
 
       )
-      if(AvarageScore1>0) {AvarageScore1 = AvarageScore1 / gamePlayedNum1
-    score1 = Math.floor(score1 / Object.keys(gameplayed).length);};
+      if(AvarageScore1>0) {
+        AvarageScore1 = AvarageScore1 / gamePlayedNum1
+        score1 = Math.floor(score1 / Object.keys(gameplayed).length);
+        chartData[0].AvarageScore = AvarageScore1;
+        chartData[0].NormalScore = score1;  
+  
+  
+  };
       
-     if(AvarageScore2>0) AvarageScore2 = AvarageScore2 / gamePlayedNum2;
-      if(AvarageScore3>0) AvarageScore3 = AvarageScore3 / gamePlayedNum3;
+     if(AvarageScore2>0){ AvarageScore2 = AvarageScore2 / gamePlayedNum2;
+    
+    score2 = Math.floor(score2 / Object.keys(gameplayed).length);
+        chartData[1].AvarageScore = AvarageScore2;
+        chartData[1].NormalScore = score2;  
+    
+    }
+      if(AvarageScore3>0) {AvarageScore3 = AvarageScore3 / gamePlayedNum3;
+      score3 = Math.floor(score3/ Object.keys(gameplayed).length);
+        chartData[2].AvarageScore = AvarageScore3;
+        chartData[2].NormalScore = score3;
+    
+    }
   }
   calculateAvarage();
+  console.log(chartData);
   return (
     <Layout>
      <SimpleGrid columns={[1, 2, 3, 1, 2 , 3]}>
