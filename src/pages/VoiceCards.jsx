@@ -33,10 +33,36 @@ import grandma from "../images/VoiceCard/grandma.jpg";
 import outside from "../images/VoiceCard/outside.jpg";
 import scared from "../images/VoiceCard/scared.jpg";
 function VoiceCards() {
+
+const message = new SpeechSynthesisUtterance();
+
+//set the message
+function setTextMessage(text){
+  message.text = text;
+}
+
+//speak the text
+function speakText(){
+  speechSynthesis.speak(message);
+}
+
+function clickEvent(text){
+
+
+  setTextMessage(text);
+  speakText();
+}
+
+
+
+
+
+
+
   return (
     <Layout>
       <Wrap spacing="30px" justify="center">
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent("   I am Hungry, I want food")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -54,7 +80,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem className="voiceCard">
+        <WrapItem onClick={()=>clickEvent("   I am Tired, I wanna sleep")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -72,7 +98,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent("   I am hurt")} >
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -90,7 +116,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent("  I am Thirsty, I want Water")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -108,7 +134,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent(" I am feeling happy")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -126,7 +152,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent(" I am angry on you")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -144,7 +170,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent("I am feeling  sad.")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -162,7 +188,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent(" I wanna go home.")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -180,7 +206,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent(" I don't wanna go to school.")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -198,7 +224,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent("  I want to go outside.")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -216,7 +242,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-          <WrapItem>
+          <WrapItem onClick={()=>clickEvent("I am happy to see grandma")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
@@ -234,7 +260,7 @@ function VoiceCards() {
             </VStack>
           </Center>
         </WrapItem>
-        <WrapItem>
+        <WrapItem onClick={()=>clickEvent("I am feeling scared")}>
           <Center w="380px" h="280px" bg="tomato">
             <VStack>
               <Image
