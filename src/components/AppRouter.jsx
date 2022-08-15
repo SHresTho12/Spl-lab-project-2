@@ -19,7 +19,7 @@ import Quizzes from '../pages/Quiz/QuizPage'
 import ChildInfo from '../pages/ChildrenInformation'
 
 
-import VoiceCard from '../pages/VoiceCard'
+import VoiceCard from '../pages/VoiceCards'
 
 import DxBall from './DXBallGame/Board'
 
@@ -61,7 +61,7 @@ export default function AppRouter(props) {
 
 
 
-          <Route exact path='/com' component={VoiceCard}/>
+          <Route exact path='/cards' component={VoiceCard}/>
           <Route exact path='/NumberTutorial' component={NumberTutorialPage}/>
           <Route exact path='/ColorsTutorials' component={ColorsTutorials}/>
           <Route exact path='/AlphabetsTutorials' component={AlphabetsTutorials}/>
