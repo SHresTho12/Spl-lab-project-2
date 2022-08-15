@@ -21,7 +21,9 @@ export function Navbar() {
       mb={4}
     >
       <HStack py={4} justifyContent='flex-end' maxW='100%' mx='auto'>
-        <Navlink to='/' name='Teach Me 2.0' size='xl' />
+        <Navlink to='/' name='Teach Me 2.0'  />
+        <Spacer />
+        <Navlink to='/cards' name='Voice Cards'  />
         <Spacer />
          {currentUSer  &&<Navlink to='/games' name='Games' />}
         {currentUSer  && <Navlink to='/quizzes' name='Quizzes'/>}
