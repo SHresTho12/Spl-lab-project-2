@@ -1,70 +1,81 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Teach_Me
+The Teach Me project is a learning platform designed for children. The platform includes interactive games and activities to help children learn a variety of subjects. The site also includes progress reports for parents to track their child's learning.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies Used
+- React.js
+- Chakra UI
+- Node.js
+- Express
+- Axios
+- MySQL
+## Features
 
-### `npm start`
+- User Profile
+- Light/dark mode toggle
+- Interactive games like
+    - Word learning
+    - Drawwing Game
+    - Word matching
+    - Memory cards
+    - Number gueesing with voice and many more
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Educational Videos 
+- Quizzes
+- Report Generation  of children
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install my-project with npm
+- Clone the repository
+```bash
+  git clone https://github.com/SHresTho12/Teach_ME
+  ```
 
-### `npm run build`
+- Install for frontend
+```bash
+ npm install
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install project dependencies for backend
+```bash
+ cd Server
+ npm install
+  ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    
+## Usage
 
-### `npm run eject`
+Run front end and backend server
+```bash
+  
+  npm start
+  cd Server
+  node index.js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
+Contributions to the project are welcome. To contribute, please fork the repository and create a pull request. Please ensure that your code adheres to the PEP 8 style guide and that all tests pass before submitting your pull request.Contributing
+Contributions to the project are welcome. To contribute, please fork the repository and create a pull request. Please ensure that your code adheres to the PEP 8 style guide and that all tests pass before submitting your pull request.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contributors
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [@SHresTho12](https://github.com/SHresTho12)
+  - Authentication system
+  - Frontend
+  - Voice games
+  - Quizzes
+  - Video Tutorials
+  - Games( Card memory game , Drawing board , Connecting the dots , Guessing the number with voice)
+  - Backend and Database 
+- [@MumtahinaRahman](https://github.com/MumtahinaRahman)
+  - Games(Guess the object with words)
+- [@yobars](https://github.com/yobars)
+ - Games(Save the man , Tutorial Page Frontend)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
